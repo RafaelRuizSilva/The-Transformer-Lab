@@ -43,7 +43,7 @@ export default function FinalResultView({ sim, animationsEnabled }: Props) {
             <MessageSquareText size={14} />
             Resposta gerada (ciclo repetido {continuation.length}×)
           </p>
-          <p className="rounded-2xl border border-indigo-400/25 bg-indigo-500/10 px-6 py-4 text-xl font-medium text-white">
+          <p className="break-words rounded-2xl border border-indigo-400/25 bg-indigo-500/10 px-6 py-4 text-xl font-medium text-white">
             {sim.text}
             {continuation.map((tok, i) => (
               <span

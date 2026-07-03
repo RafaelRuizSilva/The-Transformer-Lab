@@ -21,7 +21,7 @@ export default function WeightedValuesView({
   return (
     <div className="anim-in flex flex-col gap-6">
       <div className="flex flex-col items-center justify-center gap-3 lg:flex-row lg:items-start lg:gap-4">
-        <div className={animationsEnabled ? 'combine-pulse' : ''}>
+        <div className={`w-full min-w-0 text-center lg:w-auto ${animationsEnabled ? 'combine-pulse' : ''}`}>
           <MatrixHeatmap
             matrix={block.attnWeights}
             rowLabels={tokenLabels}
@@ -34,7 +34,7 @@ export default function WeightedValuesView({
         </div>
         <X className="mt-8 shrink-0 text-slate-400" size={22} />
         <div
-          className={animationsEnabled ? 'combine-pulse' : ''}
+          className={`w-full min-w-0 text-center lg:w-auto ${animationsEnabled ? 'combine-pulse' : ''}`}
           style={{ animationDelay: '0.8s' }}
         >
           <MatrixHeatmap

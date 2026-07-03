@@ -22,13 +22,13 @@ export default function AttentionView({ sim, block, animationsEnabled, showFormu
   return (
     <div className="anim-in flex flex-col gap-6">
       {showFormulas && (
-        <div className="mx-auto rounded-xl border border-amber-400/20 bg-amber-950/30 px-5 py-2.5 font-mono text-sm text-amber-200">
+        <div className="mx-auto max-w-full overflow-x-auto rounded-xl border border-amber-400/20 bg-amber-950/30 px-5 py-2.5 text-center font-mono text-sm text-amber-200">
           Attention Scores = (Q · Kᵀ) / √{sim.dim} = (Q · Kᵀ) / {round3(Math.sqrt(sim.dim))}
         </div>
       )}
 
-      <div className="flex flex-col items-start justify-center gap-6 lg:flex-row">
-        <div className="mx-auto">
+      <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:items-start">
+        <div className="w-full min-w-0 text-center lg:w-auto">
           <MatrixHeatmap
             matrix={block.scoresRaw}
             rowLabels={tokenLabels}
@@ -38,7 +38,7 @@ export default function AttentionView({ sim, block, animationsEnabled, showFormu
             cellSize="sm"
           />
         </div>
-        <div className="mx-auto">
+        <div className="w-full min-w-0 text-center lg:w-auto">
           <MatrixHeatmap
             matrix={block.scoresScaled}
             rowLabels={tokenLabels}

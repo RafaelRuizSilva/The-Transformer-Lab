@@ -43,7 +43,7 @@ export default function FeedForwardView({
   return (
     <div className="anim-in flex flex-col gap-6">
       {showFormulas && (
-        <div className="mx-auto rounded-xl border border-violet-400/20 bg-violet-950/30 px-5 py-2.5 font-mono text-sm text-violet-200">
+        <div className="mx-auto max-w-full overflow-x-auto rounded-xl border border-violet-400/20 bg-violet-950/30 px-5 py-2.5 text-center font-mono text-sm text-violet-200">
           FFN(x) = W₂ · ReLU(W₁ · x) — camada oculta com {hidden} neurônios
         </div>
       )}
@@ -148,7 +148,7 @@ export default function FeedForwardView({
         </div>
       </div>
 
-      <div className="flex justify-center overflow-x-auto">
+      <div className="w-full min-w-0 text-center">
         <MatrixHeatmap
           matrix={block.ffnOutput}
           rowLabels={tokenLabels}

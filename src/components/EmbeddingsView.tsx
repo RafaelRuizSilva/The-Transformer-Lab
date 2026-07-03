@@ -28,7 +28,7 @@ export default function EmbeddingsView({ sim, selectedToken, onSelectToken }: Pr
         ))}
       </div>
 
-      <div className="flex justify-center overflow-x-auto">
+      <div className="w-full min-w-0 text-center">
         <MatrixHeatmap
           matrix={sim.embeddings}
           rowLabels={tokenLabels}

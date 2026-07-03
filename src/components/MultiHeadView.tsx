@@ -43,14 +43,14 @@ export default function MultiHeadView({ sim, block }: Props) {
           <button
             key={i}
             onClick={() => setSelectedHead(i)}
-            className={`card flex flex-col items-center gap-2 p-3 transition-all ${
+            className={`card flex min-w-0 flex-col items-center gap-2 p-3 transition-all ${
               selectedHead === i ? 'ring-2 ring-white/40' : 'opacity-75 hover:opacity-100'
             }`}
           >
             <span className="text-xs font-bold" style={{ color: HEAD_HEX[i % 4] }}>
               {i + 1}. {h.name}
             </span>
-            <div className="overflow-x-auto">
+            <div className="w-full min-w-0 text-center">
               <MatrixHeatmap
                 matrix={h.softmax}
                 color={HEAD_COLORS[i % 4]}
@@ -66,7 +66,7 @@ export default function MultiHeadView({ sim, block }: Props) {
           Cabeça {selectedHead + 1} — {head.name}
         </p>
         <p className="mb-3 text-xs text-slate-400">{head.description}</p>
-        <div className="flex justify-center overflow-x-auto">
+        <div className="w-full min-w-0 text-center">
           <MatrixHeatmap
             matrix={head.softmax}
             rowLabels={tokenLabels}
@@ -86,7 +86,7 @@ export default function MultiHeadView({ sim, block }: Props) {
             title="Intensidade de foco por cabeça (pico médio de atenção)"
           />
         </div>
-        <div className="mx-auto overflow-x-auto">
+        <div className="w-full min-w-0 text-center">
           <MatrixHeatmap
             matrix={block.concatHeads}
             rowLabels={tokenLabels}

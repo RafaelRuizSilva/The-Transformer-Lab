@@ -60,13 +60,13 @@ export default function QKVView({ sim, block, selectedToken, onSelectToken }: Pr
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {PANELS.map((panel) => (
-          <div key={panel.key} className="card flex flex-col items-center gap-2 p-4">
+          <div key={panel.key} className="card flex min-w-0 flex-col items-center gap-2 p-4">
             <div className={`flex items-center gap-2 text-sm font-bold ${panel.text}`}>
               <panel.icon size={16} />
               {panel.name}
             </div>
             <p className="text-center text-xs text-slate-400">{panel.desc}</p>
-            <div className="overflow-x-auto">
+            <div className="w-full min-w-0 text-center">
               <MatrixHeatmap
                 matrix={block[panel.key]}
                 rowLabels={tokenLabels}

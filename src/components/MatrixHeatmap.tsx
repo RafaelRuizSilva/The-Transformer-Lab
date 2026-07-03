@@ -51,7 +51,7 @@ export default function MatrixHeatmap({
   }
 
   return (
-    <div className="inline-block max-w-full">
+    <div className="inline-block min-w-0 max-w-full">
       {title && (
         <div className="mb-1.5 text-xs font-semibold text-slate-300">{title}</div>
       )}

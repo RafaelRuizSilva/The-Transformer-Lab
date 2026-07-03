@@ -40,7 +40,7 @@ export default function SoftmaxView({
           highlightRow={selectedToken}
         />
         <ArrowRight className="mt-10 shrink-0 rotate-90 text-slate-400 lg:rotate-0" size={22} />
-        <div>
+        <div className="w-full min-w-0 text-center lg:w-auto">
           <MatrixHeatmap
             matrix={block.attnWeights}
             rowLabels={tokenLabels}

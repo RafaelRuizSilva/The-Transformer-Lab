@@ -237,7 +237,7 @@ export default function App() {
 
             {/* Conteúdo principal + painel educacional */}
             <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-[1fr_340px]">
-              <main className="card min-h-96 p-5">
+              <main className="card min-h-96 min-w-0 p-5">
                 <h2 className="mb-5 flex items-center gap-2 text-lg font-bold text-white">
                   <Sparkles size={18} className="text-indigo-400" />
                   {step.title}
