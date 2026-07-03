@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #141b3a 0%, #0b1020 55%, #070b16 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.anim-in {
+  animation: fadeSlideIn 0.4s ease both;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 108, 255, 0.5); }
+  50% { box-shadow: 0 0 18px 4px rgba(124, 108, 255, 0.35); }
+}
+
+.glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes flowDash {
+  to { stroke-dashoffset: -24; }
+}
+
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: flowDash 1s linear infinite;
+}
+
+@keyframes combinePulse {
+  0% { opacity: 0.3; transform: scale(0.97); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.3; transform: scale(0.97); }
+}
+
+.combine-pulse {
+  animation: combinePulse 1.6s ease-in-out infinite;
+}
+
+.no-anim *, .no-anim {
+  animation: none !important;
+  transition: none !important;
+}
+
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 8px; }
